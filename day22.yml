@@ -1,8 +1,14 @@
-name: Day22 Workflow
+name: Day23 workflow
 on: push
-jobs: 
-first-job:
-runs-on: ubuntu-latest
+jobs:
+build:
+run-on: ubuntu-latest
 steps:
--name: Print Welcome
-run: echo "Welcome Sweety to DevOps"
+-name: Checkout Repository
+uses: actions/checkout@v4
+-name: Print Welcome message
+run: echo "Welcome Sweety to github actions"
+-name: Show current Directory
+run: pwd
+-name: Print completion message
+run: echo "Workflow completed successfully"
