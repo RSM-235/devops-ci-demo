@@ -1,14 +1,19 @@
-name: Day23 workflow
-on: push
+name: Day24 CI Workflow
+on: 
+push:
+branches:
+-master
 jobs:
-build:
-run-on: ubuntu-latest
+build-and-test:
+runs-on: ubuntu-latest
 steps:
 -name: Checkout Repository
 uses: actions/checkout@v4
--name: Print Welcome message
-run: echo "Welcome Sweety to github actions"
--name: Show current Directory
-run: pwd
--name: Print completion message
-run: echo "Workflow completed successfully"
+-name: Show Files
+run: ls -la
+-name: Simulate Build
+run: echo "Building application..."
+-name: Simulate Testing
+run: echo "Running tests..."
+-name: Build Successful
+run: echo "CI Pipeline completed successfully"
