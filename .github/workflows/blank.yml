@@ -1,16 +1,30 @@
 name: Day24 CI workflow
+
+
 on: push
+
+
 jobs:
-build:
-runs-on: ubuntu-latest
-steps:
--name: Checkout Repository
-uses: actions/checkout@v4
--name: Show Files
-run: ls -la
--name: Simulate Build
-run: echo "Building application..."
--name: Simulate Testing
-run: echo "Running tests..."
--name: Build Successful
-run: echo "CI Pipeline completed successfully"
+  build:
+   runs-on: ubuntu-latest
+
+
+   steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+
+    - name: Show Files
+      run: ls -la
+
+
+    - name: Simulate Build
+      run: echo "Building application..."
+
+
+    - name: Simulate Testing
+      run: echo "Running tests..."
+
+
+    - name: Build Successful
+      run: echo "CI Pipeline completed successfully"
