@@ -17,3 +17,5 @@ run: echo "Building application..."
 run: echo "Running tests..."
 -name: Build Successful
 run: echo "CI Pipeline completed successfully"
+-name: Show System Info
+run: uname -a
