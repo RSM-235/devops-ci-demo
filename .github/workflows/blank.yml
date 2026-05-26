@@ -1,11 +1,11 @@
-name: Day24 CI workflow
+name: Day25 Auto Build workflow
 
 
 on: push
 
 
 jobs:
-  build:
+  build-project:
    runs-on: ubuntu-latest
 
 
@@ -14,8 +14,16 @@ jobs:
       uses: actions/checkout@v4
 
 
-    - name: Show Files
-      run: ls -la
+    - name: Update Packages
+      run: sudo apt update
+
+
+    - name: Install Node.js
+      run: sudo apt install -y nodejs
+
+
+    - name: Check Node Version
+      run: node -v
 
 
     - name: Simulate Build
