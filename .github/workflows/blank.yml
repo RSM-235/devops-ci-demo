@@ -36,3 +36,8 @@ jobs:
 
     - name: Build Successful
       run: echo "CI Pipeline completed successfully"
+
+
+    - name: Show Current User
+      run: whoami
+
