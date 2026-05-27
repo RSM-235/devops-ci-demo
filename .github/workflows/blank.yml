@@ -1,43 +1,33 @@
-name: Day25 Auto Build workflow
-
+name: Day26 CI-CD Pipeline
 
 on: push
 
-
 jobs:
-  build-project:
-   runs-on: ubuntu-latest
+  build-and-deploy:
+  runs-on: ubuntu-latest
 
+  steps:
+     - name: Check Repository
+       user: actions/checkout@v4
 
-   steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+     - name: Install Node.js
+       run: sudo apt install -y nodejs
 
+     - name: Check Node Version
+       run: node -v
 
-    - name: Update Packages
-      run: sudo apt update
+     - name: Build Application
+       run: echo "Building application..."
 
+     - name: Run Tests
+       run: echo "Running tests..."
 
-    - name: Install Node.js
-      run: sudo apt install -y nodejs
+     - name: Deploy Application
+       run: echo "Deploying application to server..."
 
+     - name: Deployment Successful
+       run: echo "Application deployed successfully..."
 
-    - name: Check Node Version
-      run: node -v
-
-
-    - name: Simulate Build
-      run: echo "Building application..."
-
-
-    - name: Simulate Testing
-      run: echo "Running tests..."
-
-
-    - name: Build Successful
-      run: echo "CI Pipeline completed successfully"
-
-
-    - name: Show Current User
-      run: whoami
+     - name: Restart Server
+       run: echo "Restarting application server..."
 
