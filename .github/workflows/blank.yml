@@ -2,43 +2,43 @@ name: Day26 CI-CD Pipeline
 
 
 on:
-  push:
+   push:
 
 
 jobs:
-  build-and-deploy:
-  runs-on: ubuntu-latest
+   build-and-deploy:
+    runs-on: ubuntu-latest
 
 
-  steps:
-     - name: Checkout Repository
-       uses: actions/checkout@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
 
-     - name: Install Node.js
-       run: sudo apt install -y nodejs
+      - name: Install Node.js
+        run: sudo apt install -y nodejs
 
 
-     - name: Check Node Version
-       run: node -v
+      - name: Check Node Version
+        run: node -v
 
 
-     - name: Build Application
-       run: echo "Building application..."
+      - name: Build Application
+        run: echo "Building application..."
 
 
-     - name: Run Tests
-       run: echo "Running tests..."
+      - name: Run Tests
+        run: echo "Running tests..."
 
 
-     - name: Deploy Application
-       run: echo "Deploying application to server..."
+      - name: Deploy Application
+        run: echo "Deploying application to server..."
 
 
-     - name: Deployment Successful
-       run: echo "Application deployed successfully..."
+      - name: Deployment Successful
+        run: echo "Application deployed successfully..."
 
 
-     - name: Restart Server
-       run: echo "Restarting application server..."
+      - name: Restart Server
+        run: echo "Restarting application server..."
 
