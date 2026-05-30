@@ -1,4 +1,4 @@
-name: Day26 CI-CD Pipeline
+name: Day29 AWS Deployment Pipeline
 
 
 on:
@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-   build-and-deploy:
+   deploy-to-aws:
     runs-on: ubuntu-latest
 
 
@@ -15,30 +15,21 @@ jobs:
         uses: actions/checkout@v4
 
 
-      - name: Install Node.js
-        run: sudo apt install -y nodejs
+      - name: Build Docker  Image
+        run: docker build -t sweety-devops-project .
 
 
-      - name: Check Node Version
-        run: node -v
+      - name: Show Docker Images
+        run: docker image
 
 
-      - name: Build Application
-        run: echo "Building application..."
+      - name: Simulate AWS EC2 Deployment
+        run: echo "Deploying Docker container to AWS EC2..."
 
 
-      - name: Run Tests
-        run: echo "Running tests..."
-
-
-      - name: Deploy Application
-        run: echo "Deploying application to server..."
+      - name: Simulate Container Start
+        run: echo "Starting container on AWS server..."
 
 
       - name: Deployment Successful
-        run: echo "Application deployed successfully..."
-
-
-      - name: Restart Server
-        run: echo "Restarting application server..."
-
+        run: echo "Application deployed successfully to AWS EC2..."
